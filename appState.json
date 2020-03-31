@@ -1,0 +1,117 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "63c66a5d-46fa-4476-8efb-46331813b179": {
+        "id": "63c66a5d-46fa-4476-8efb-46331813b179",
+        "parent": null,
+        "name": "KeellsNotifier.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "KeellsNotifier.js",
+        "cursor": {
+          "lineNumber": 4,
+          "column": 22
+        },
+        "config": {
+          "runtime": "nodejs10.x",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": [
+          {
+            "resourceName": "cwerunEveryTen",
+            "config": {}
+          }
+        ],
+        "testCases": {
+          "6e0d185b-511f-4d1b-bbc0-ad419613fa15": {
+            "id": "6e0d185b-511f-4d1b-bbc0-ad419613fa15",
+            "name": "Test event",
+            "functionId": "63c66a5d-46fa-4476-8efb-46331813b179",
+            "event": "{\"key1\": \"value1\", \"key2\": \"value2\", \"key3\": \"value3\"}",
+            "eventTemplate": "hello-world"
+          }
+        }
+      }
+    },
+    "openFiles": [
+      "63c66a5d-46fa-4476-8efb-46331813b179"
+    ],
+    "currentFileId": "63c66a5d-46fa-4476-8efb-46331813b179",
+    "resources": {
+      "snsDirectSMSResource": {
+        "name": "snsDirectSMSResource",
+        "type": "SNS",
+        "config": {
+          "snsType": 1,
+          "numbers": [
+            "@{receiver}"
+          ]
+        }
+      },
+      "cwerunEveryTen": {
+        "name": "cwerunEveryTen",
+        "type": "CLOUD_WATCH",
+        "config": {
+          "mode": 0,
+          "name": "runEveryTen",
+          "description": "",
+          "eventBusName": "default",
+          "scheduleExpression": "rate(10 minutes)"
+        }
+      }
+    },
+    "customTemplate": {
+      "dialect": null,
+      "definitions": null
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {
+        "axios": {
+          "name": "axios",
+          "version": "0.19.2",
+          "dev": false,
+          "language": "nodejs"
+        },
+        "aws-sdk": {
+          "name": "aws-sdk",
+          "language": "nodejs",
+          "version": "2.644.0",
+          "dev": true,
+          "notRemovable": false
+        }
+      }
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "KeellsNotifier",
+    "projectDescription": "",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1585664381284,
+    "language": "nodejs"
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "keellsnotifier",
+      "url": "https://github.com/asankhaperera/keellsnotifier"
+    }
+  }
+}
