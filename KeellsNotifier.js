@@ -8,12 +8,13 @@ exports.handler = async (event) => {
     let response = await axios.get('https://int.keellssuper.net/login');
     if (response.data) {
         let htmlText = JSON.stringify(response.data);
+        console.log(htmlText);
         if (htmlText.includes(city)) {
             console.log("Ready!");
             try {
                 let data = await sns.publish({
-                    Message: "Keells is now available for city : " + city,
-                    PhoneNumber: "+94702805724",
+                    Message: `Keells is now available for city : ${city}`,
+                    PhoneNumber: process.PHONE_NUMBER,
                     MessageAttributes: {
                         'AWS.SNS.SMS.SMSType': {
                             DataType: "String",
@@ -21,7 +22,7 @@ exports.handler = async (event) => {
                         },
                         'AWS.SNS.SMS.SenderID': {
                             DataType: "String",
-                            StringValue: "94703148313"
+                            StringValue: "Keels Notifier"
                         }
                     }
                 }).promise();

@@ -11,8 +11,8 @@
         "isRemovable": true,
         "filePath": "KeellsNotifier.js",
         "cursor": {
-          "lineNumber": 4,
-          "column": 22
+          "lineNumber": 1,
+          "column": 1
         },
         "config": {
           "runtime": "nodejs10.x",
@@ -23,7 +23,7 @@
         },
         "triggers": [
           {
-            "resourceName": "cwerunEveryTen",
+            "resourceName": "cweTimer15m",
             "config": {}
           }
         ],
@@ -43,25 +43,28 @@
     ],
     "currentFileId": "63c66a5d-46fa-4476-8efb-46331813b179",
     "resources": {
+      "cweTimer15m": {
+        "name": "cweTimer15m",
+        "type": "CLOUD_WATCH",
+        "config": {
+          "mode": 0,
+          "name": "Timer15m",
+          "description": "",
+          "eventBusName": "default",
+          "scheduleExpression": "rate(15 minutes)"
+        }
+      },
       "snsDirectSMSResource": {
         "name": "snsDirectSMSResource",
         "type": "SNS",
         "config": {
           "snsType": 1,
           "numbers": [
-            "@{receiver}"
+            "@{receiver}",
+            "+94702805724",
+            "+94779460639",
+            "@{process.PHONE_NUMBER}"
           ]
-        }
-      },
-      "cwerunEveryTen": {
-        "name": "cwerunEveryTen",
-        "type": "CLOUD_WATCH",
-        "config": {
-          "mode": 0,
-          "name": "runEveryTen",
-          "description": "",
-          "eventBusName": "default",
-          "scheduleExpression": "rate(10 minutes)"
         }
       }
     },
@@ -77,6 +80,14 @@
         "shouldPersist": false,
         "displayOnly": false,
         "editable": false
+      },
+      {
+        "lambdaId": "63c66a5d-46fa-4476-8efb-46331813b179",
+        "varKey": "PHONE_NUMBER",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": true
       }
     ],
     "packageJSON": {
@@ -103,15 +114,15 @@
     "projectVersion": "1.0.0",
     "projectRegion": "us-east-1",
     "platform": "AWS",
+    "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1585664381284,
-    "language": "nodejs"
+    "lastSave": 1585670840104
   },
   "VCS_STATE": {
     "provider": "GitHub",
     "repo": {
       "name": "keellsnotifier",
-      "url": "https://github.com/asankhaperera/keellsnotifier"
+      "url": "https://github.com/Udith/keellsnotifier"
     }
   }
 }
