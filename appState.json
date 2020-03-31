@@ -60,9 +60,6 @@
         "config": {
           "snsType": 1,
           "numbers": [
-            "@{receiver}",
-            "+94702805724",
-            "+94779460639",
             "@{process.PHONE_NUMBER}"
           ]
         }
