@@ -14,7 +14,7 @@ exports.handler = async (event) => {
             try {
                 let data = await sns.publish({
                     Message: `Keells is now available for city : ${city}`,
-                    PhoneNumber: process.PHONE_NUMBER,
+                    PhoneNumber: process.env.PHONE_NUMBER,
                     MessageAttributes: {
                         'AWS.SNS.SMS.SMSType': {
                             DataType: "String",
