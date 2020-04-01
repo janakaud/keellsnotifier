@@ -8,7 +8,7 @@ exports.handler = async (event) => {
     let response = await axios.get('https://int.keellssuper.net/login');
     if (response.data) {
         let htmlText = JSON.stringify(response.data);
-        console.log(htmlText);
+        // console.log(htmlText);
         if (htmlText.includes(city)) {
             console.log("Ready!");
             try {

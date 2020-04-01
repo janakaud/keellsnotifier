@@ -11,8 +11,8 @@
         "isRemovable": true,
         "filePath": "KeellsNotifier.js",
         "cursor": {
-          "lineNumber": 17,
-          "column": 59
+          "lineNumber": 11,
+          "column": 34
         },
         "config": {
           "runtime": "nodejs10.x",
@@ -113,7 +113,7 @@
     "platform": "AWS",
     "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1585712334944
+    "lastSave": 1585712398066
   },
   "VCS_STATE": {
     "provider": "GitHub",
